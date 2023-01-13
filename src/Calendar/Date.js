@@ -12,9 +12,9 @@ const Date = ({ TotalDate, dateValue }) => {
     }
 
     if (+dateValue === row) {
-      cells.push(<td className='tddate'>{row}</td>)
+      cells.push(<td key={i} data-testid="DateValue" className='tddate'>{row}</td>)
     } else {
-      cells.push(<td className='tddateBox'>{row}</td>)
+      cells.push(<td key={i} data-testid="vale" className='tddateBox'>{row}</td>)
     }
 
     if (i === TotalDate.length - 1) {
@@ -23,16 +23,16 @@ const Date = ({ TotalDate, dateValue }) => {
     }
   });
 
-  let daysinmonth = rows.map((d, i) => {
-    return <tr>{d}</tr>;
-  });
+  let daysInMonth = rows.map((d, i) => (
+    <tr key={i}>{d}</tr>
+  ));
 
 
   return (
     <div>
       <table style={{ marginLeft: '0', color: 'white' }}>
         <tbody>
-          {daysinmonth}
+          {daysInMonth}
         </tbody>
       </table>
     </div>

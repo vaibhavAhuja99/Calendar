@@ -7,7 +7,7 @@ function App() {
 
   return (
     <div className="App">
-      <Calendar data-test-id='calendar' value={selectedData} />
+      <Calendar value={selectedData} />
     </div>
   );
 }
